@@ -18,7 +18,38 @@ body {
     font-weight: normal;
     text-transform: capitalize;
     background-color: var(--main-color);
+    overflow: hidden;
 }
+
+.hero-section .container {
+    height: calc(100vh - 85px);
+    overflow: hidden;
+}
+
+
+@media (orientation: landscape) and (max-width:768px) {
+    body {
+        overflow: visible;
+    }
+
+    .hero-section .container {
+        height: auto;
+        overflow: visible;
+    }
+}
+
+@media (orientation: landscape) and (max-height:650px) {
+    body {
+        overflow: visible;
+    }
+
+    .hero-section .container {
+        height: auto;
+        overflow: visible;
+    }
+
+}
+
 
 .container {
     width: 100%;
@@ -223,9 +254,12 @@ header .i-checkbox:checked~.mobile-menu {
 /* Start Hero Section */
 
 .hero-section .hero-content {
+    height: 100%;
     text-align: center;
     text-transform: uppercase;
-
+    display: flex;
+    flex-direction: column;
+    row-gap: 153px;
 }
 
 .hero-section .text-content {
@@ -272,10 +306,10 @@ header .i-checkbox:checked~.mobile-menu {
 .hero-section .text-content .online-deals {
     background-color: #f1c19d;
     position: absolute;
-    top: 280px;
-    width: 320px;
-    right: 0px;
-    display: none;
+    top: 63px;
+    width: 255px;
+    right: -100%;
+    display: flex;
     align-items: center;
     border-radius: 2px;
     -webkit-border-radius: 2px;
@@ -283,8 +317,9 @@ header .i-checkbox:checked~.mobile-menu {
     -ms-border-radius: 2px;
     -o-border-radius: 2px;
     overflow: hidden;
-    height: 80px;
+    height: 65px;
     z-index: -1;
+    margin-top: 85px;
 
 
 }
@@ -294,7 +329,7 @@ header .i-checkbox:checked~.mobile-menu {
     background-color: var(--color-desktop);
     color: var(--main-color);
     text-align: start;
-    font-size: 2rem;
+    font-size: 1.6rem;
     padding: 9px 10px;
     line-height: 1;
     height: 100%;
@@ -308,7 +343,7 @@ header .i-checkbox:checked~.mobile-menu {
 .hero-section .online-deals .discount {
     width: 20%;
     text-align: center;
-    font-size: 1.6rem;
+    font-size: 1rem;
     color: var(--color-desktop);
     font-weight: bold;
 }
@@ -327,11 +362,11 @@ header .i-checkbox:checked~.mobile-menu {
     -ms-border-radius: 50%;
     -o-border-radius: 50%;
     background-color: #f1c19d;
-    margin-top: 110px;
 }
 
 .hero-section .contact-box {
     text-align: center;
+    display: none;
 }
 
 .hero-section .contact-box .social-links {
@@ -364,28 +399,6 @@ header .i-checkbox:checked~.mobile-menu {
     color: var(--color-black-lite);
 }
 
-@media (orientation: portrait) {
-    body {
-        overflow: hidden;
-    }
-
-    .hero-section .container {
-        height: calc(100vh - 85px);
-        overflow: hidden;
-    }
-}
-
-@media (orientation: landscape) {
-    body {
-        overflow: visible;
-    }
-
-    .hero-section .container {
-        height: auto;
-        overflow: visible;
-    }
-}
-
 
 @media (min-width:767px) {
 
@@ -396,6 +409,7 @@ header .i-checkbox:checked~.mobile-menu {
         flex-wrap: wrap;
         height: 100%;
         text-align: end;
+        row-gap: 0;
 
     }
 
@@ -439,7 +453,26 @@ header .i-checkbox:checked~.mobile-menu {
 
     .hero-section .text-content .online-deals {
         display: flex;
+        right: 0px;
+        top: 185px;
+        width: 300px;
+        height: 80px;
+        font-size: 2rem;
     }
+
+    .hero-section .online-deals .part-online,
+    .hero-section .online-deals .last-online {
+        font-size: 2rem;
+    }
+
+    .hero-section .online-deals .discount {
+        font-size: 1.4rem;
+    }
+
+    .hero-section .contact-box {
+        display: inline-block;
+    }
+
 }
 
 @media (min-width:1024px) {
@@ -483,6 +516,7 @@ header .i-checkbox:checked~.mobile-menu {
     .hero-section .text-content .online-deals {
         top: 345px;
         width: 385px;
+        margin: 0;
     }
 
     .hero-section .contact-box {
